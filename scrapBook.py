@@ -19,9 +19,10 @@ class ScrapBooks:
             soup = BeautifulSoup(req.content, 'html.parser')
 
             to_href = soup.find_all('div', class_='image_container')
-            for item in to_href:
-                book_hrefs.append("http://books.toscrape.com/catalogue/" + item.find('a')['href'])
-
+            book_hrefs.extend(
+                "http://books.toscrape.com/catalogue/" + item.find('a')['href']
+                for item in to_href
+            )
 
         self.scrap(book_hrefs)
 

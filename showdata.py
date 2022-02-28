@@ -15,9 +15,6 @@ for item in data["kitaplar"]:
     if item['BookStars'] == 3: star_3.append(item["BookStars"])
     if item['BookStars'] == 4: star_4.append(item["BookStars"])
     if item['BookStars'] == 5: star_5.append(item["BookStars"])
-    else: pass
-
-    
 labels = '2 star', '3 star', '4 star', '5 star'
 sizes = [len(star_2), len(star_3), len(star_4), len(star_5)]
 colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
